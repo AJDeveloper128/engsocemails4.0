@@ -1,28 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <!--Change Depending on Week-->
   <title>Week 1 Announcements</title>
   <meta name="x-apple-disable-message-reformatting">
   <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+
+  <!-- Enable color schemes in clients that support it -->
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+
+  <style>
+    /* Base resets */
+    html, body { margin:0; padding:0; }
+
+    /* Light mode overrides */
+    @media (prefers-color-scheme: light) {
+      body, .wrap { background:#ffffff !important; }
+      .container { background:#ffffff !important; color:#111111 !important; }
+      /* Cards */
+      table[style*="border-radius:16px"] { background:#ffffff !important; }
+      table[style*="border-radius:16px"] td[style*="background:#303030"] {
+        background:#f4f4f4 !important; color:#111111 !important;
+      }
+      /* Card titles */
+      table[style*="border-radius:16px"] td[style*="background:#6a78ff"] {
+        background:#6a78ff !important; color:#ffffff !important;
+      }
+      /* Headline and intro text */
+      .headline { color:#111111 !important; }
+      .intro { color:#333333 !important; }
+
+      /* Buttons and links */
+      .btn-cta { background:#2363e2 !important; }
+      a.link { color:#2363e2 !important; }
+
+      /* Footer background and icon visibility */
+      .footer { background:#ffffff !important; }
+      .footer a img.icon { filter: invert(1) !important; } /* turn white glyphs dark on light bg */
+    }
+
+    /* Dark mode overrides */
+    @media (prefers-color-scheme: dark) {
+      body, .wrap { background:#0d0d0d !important; }
+      .container { background:#0d0d0d !important; color:#ffffff !important; }
+      /* Cards */
+      table[style*="border-radius:16px"] { background:#0d0d0d !important; }
+      table[style*="border-radius:16px"] td[style*="background:#303030"] {
+        background:#303030 !important; color:#ffffff !important;
+      }
+      /* Card titles */
+      table[style*="border-radius:16px"] td[style*="background:#6a78ff"] {
+        background:#6a78ff !important; color:#ffffff !important;
+      }
+      /* Headline and intro text */
+      .headline, .intro { color:#ffffff !important; }
+
+      /* Buttons and links */
+      .btn-cta { background:#2363e2 !important; }
+      a.link { color:#6a78ff !important; }
+
+      /* Footer */
+      .footer { background:#0d0d0d !important; }
+      .footer a img.icon { filter: none !important; } /* keep icons white on dark bg */
+    }
+
+    /* Outlook.com and older Gmail dark mode helpers */
+    :root { color-scheme: light dark; supported-color-schemes: light dark; }
+    [data-ogsc] .container { background:#0d0d0d !important; color:#ffffff !important; }
+    [data-ogsc] .footer a img.icon { filter:none !important; }
+  </style>
 </head>
 
-<body style="margin:0; padding:0; background:#0d0d0d;">
+<body class="wrap" style="margin:0; padding:0; background:#0d0d0d;">
   <!-- Wrapper -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#0d0d0d;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="wrap" style="background:#0d0d0d;">
     <tr>
       <td align="center" style="padding:20px 12px;">
 
         <!-- Container -->
         <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="700"
+          class="container"
           style="width:700px; max-width:700px; background:#0d0d0d; color:#ffffff; font-family:Arial, Helvetica, sans-serif;">
 
           <!-- Logo -->
           <tr>
             <td align="center" style="padding:0 0 20px 0;">
-              <!-- Replace with your hosted logo URL -->
               <img src="EngSocLogo2.png" width="180" alt="Guelph EngSoc"
                 style="display:block; width:180px; max-width:180px; height:auto; border:0; outline:none; text-decoration:none;">
             </td>
@@ -30,23 +93,23 @@
 
           <!-- Title -->
           <tr>
-            <td align="center" style="font-size:40px; line-height:34px; font-weight:bold; padding:0 12px 14px 12px;">
+            <td align="center" class="headline" style="font-size:40px; line-height:34px; font-weight:bold; padding:0 12px 14px 12px; color:#ffffff;">
               WEEK 1<br>ANNOUNCEMENTS
             </td>
           </tr>
           <tr>
-            <td align="center" style="font-size:14px; line-height:34px; font-weight:bold; padding:0 12px 14px 12px;">
-              Welcome Back Guelph ENGG! We are so excited to start off another amazing year so keep an eye out for these
-              weekly emails to know all the events that our happening within our Engineering Community!
+            <td align="center" class="intro" style="font-size:14px; line-height:34px; font-weight:bold; padding:0 12px 14px 12px; color:#ffffff;">
+              Welcome Back Guelph ENGG! We are so excited to start off another amazing year, so keep an eye out for these
+              weekly emails to know all the events that are happening within our Engineering Community!
             </td>
           </tr>
+
           <!-- CTA: Upcoming Events -->
           <tr>
             <td align="center" style="padding:8px 12px 18px 12px;">
-              <!-- bulletproof-ish button -->
               <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td bgcolor="#2363e2" style="border-radius:6px; padding:12px 22px;">
+                  <td class="btn-cta" bgcolor="#2363e2" style="border-radius:6px; padding:12px 22px; background:#2363e2;">
                     <a href="#"
                       style="font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#ffffff; text-decoration:none; font-weight:bold; display:inline-block;">
                       Upcoming Events</a>
@@ -55,37 +118,30 @@
               </table>
             </td>
           </tr>
+
           <!--Locker Rentals-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 Locker Rentals Now Live!!
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="Blue and Cream Minimalist Back To School Your Story.png" width="180"
                     alt="Locker Rentals Info" style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Locker Rentals are Now Live!! Use this link: <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=K6Fivq0soUml-oX08xVqfWFSbwjj5uJNoCYHrS4uaylUM0w3VlFQMzIwT04xOURMUFNLVjE5NVlTWi4u"
+                  Locker Rentals are Now Live! Use this link:
+                  <a class="link" href="https://forms.office.com/Pages/ResponsePage.aspx?id=K6Fivq0soUml-oX08xVqfWFSbwjj5uJNoCYHrS4uaylUM0w3VlFQMzIwT04xOURMUFNLVjE5NVlTWi4u"
                     target="_blank" style="color:#6a78ff; font-weight:bold; text-decoration:none;">
                     Apply Now!
-                  </a> To apply for a locker.
-                  Any questions? email gesthorn@uoguelph.ca
+                  </a>
+                  to apply for a locker. Any questions, email gesthorn@uoguelph.ca
                 </p>
-
               </td>
             </tr>
           </table>
@@ -93,30 +149,21 @@
           <!--Intramurals-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 Engineering Intramurals!!
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="ENGG_Intramural_Poster.png" width="180"
-                    alt="Locker Rentals Info" style="display:block; margin:0 auto; height:auto;">
+                    alt="Intramurals Poster" style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Sign up for Engineering Intramurals!! Sports are NOW OPEN! Are you looking for a way to stay active and join some fun, competitive leagues this fall? Spaces fill up quickly so make sure to grab your spot now!! Contact mjohns87@uoguelph.ca or mbarbera@uoguelph.ca if you have any questions.
+                  Sign up for Engineering Intramurals! Sports are now open. Are you looking for a way to stay active and join some fun, competitive leagues this fall? Spaces fill up quickly, so make sure to grab your spot now. Contact mjohns87@uoguelph.ca or mbarbera@uoguelph.ca if you have any questions.
                 </p>
-
               </td>
             </tr>
           </table>
@@ -124,117 +171,80 @@
           <!--GEPD EVENT-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 Kickoff GEPD Night
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="IMG_0440.png" width="180" alt="GEPD Flyer"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
                 <div style="text-align:left; font-size:15px; line-height:22px;">
                   📅 <strong>Date:</strong> September 9th 2025<br>
-                  🕖 <strong>Time:</strong> 6 - 8:30pm<br>
+                  🕖 <strong>Time:</strong> 6 to 8:30 pm<br>
                   📍 <strong>Location:</strong> THRN 1006<br>
                 </div>
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Come meet the GEPD team, explore your professional journey and enjoy some cookies! Our event also
-                  offers a free patch at the end! Location has changed make sure to show up to THRN 1006!
+                  Come meet the GEPD team, explore your professional journey, and enjoy some cookies. Our event also offers a free patch at the end. Location has changed, make sure to show up to THRN 1006.
                 </p>
-
               </td>
             </tr>
           </table>
+
+          <!--Rocketry-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px; margin:0 auto 20px auto;">
-
-
-            <!--ROCKETRY-->
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 Rocketry First General Meeting
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="Logo_V1_1.png" width="180" alt="Rocketry Logo"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
                 <div style="text-align:left; font-size:15px; line-height:22px;">
                   📅 <strong>Date:</strong> Monday, September 8th 2025<br>
-                  🕖 <strong>Time:</strong> 6-8 PM<br>
+                  🕖 <strong>Time:</strong> 6 to 8 pm<br>
                   📍 <strong>Location:</strong> THRN 1002<br>
                 </div>
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Come meet our team, learn about our goals for the year and our plan to get there!
+                  Come meet our team, learn about our goals for the year, and our plan to get there.
                 </p>
-
               </td>
             </tr>
           </table>
+
+          <!--Gryphon Racing-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px; margin:0 auto 20px auto;">
-
-
-            <!--ROCKETRY-->
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 Gryphon Racing First General Meeting
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="Gryphon racing logo background removed.png" width="180" alt="Racing Logo"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
                 <div style="text-align:left; font-size:15px; line-height:22px;">
                   📅 <strong>Date:</strong> Thursday Sept. 18 2025<br>
-                  🕖 <strong>Time:</strong> 7:30 PM<br>
+                  🕖 <strong>Time:</strong> 7:30 pm<br>
                   📍 <strong>Location:</strong> Peter Clark Hall<br>
                 </div>
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Join us for Gryphon Racing’s first general meeting of the year! Gryphon Racing is the University of
-                  Guelph’s Formula SAE team, where students design, build, and compete with a formula-style race car
-                  against universities from around the world. This year, our team is returning to Internal Combustion
-                  (IC), offering an exciting opportunity to contribute to a competitive and fast-paced engineering
-                  project!
+                  Join us for Gryphon Racing’s first general meeting of the year. Gryphon Racing is the University of Guelph’s Formula SAE team, where students design, build, and compete with a formula style race car against universities from around the world. This year, our team is returning to Internal Combustion, which is an exciting opportunity to contribute to a competitive and fast paced engineering project.
                 </p>
-
               </td>
             </tr>
           </table>
@@ -242,37 +252,26 @@
           <!--GNCTR-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 GNCTR First General Meeting
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="image (9).png" width="180" alt="GNCTR Logo"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
                 <div style="text-align:left; font-size:15px; line-height:22px;">
                   📅 <strong>Date:</strong> September 11th 2025<br>
-                  🕖 <strong>Time:</strong> 5:15 PM<br>
+                  🕖 <strong>Time:</strong> 5:15 pm<br>
                   📍 <strong>Location:</strong> THRN 1006<br>
                 </div>
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Our first general meeting is happening next Thursday at 5:15pm in THRN 1006. Come out and learn more
-                  about our club. All are welcome.
+                  Our first general meeting is happening next Thursday at 5:15 pm in THRN 1006. Come out and learn more about our club. All are welcome.
                 </p>
-
               </td>
             </tr>
           </table>
@@ -280,40 +279,26 @@
           <!--Cheers & Gears-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 Cheers & Gears Info Sessions
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
-                  <img src="cheers_and_gears.avif" width="180" alt="GEPD Flyer"
+                  <img src="cheers_and_gears.avif" width="180" alt="EngMusical"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
                 <div style="text-align:left; font-size:15px; line-height:22px;">
                   📅 <strong>Date:</strong> September 15th and 18th<br>
-                  🕖 <strong>Time:</strong> 6 PM<br>
+                  🕖 <strong>Time:</strong> 6 pm<br>
                   📍 <strong>Location:</strong> THRN 1006<br>
                 </div>
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Calling all students! We are excited to present an annual engineering tradition, the EngMusical! We
-                  are looking for talented students to join our cast, crew, dance team, and band. No experience is
-                  required. Info sessions will be held on September 15th and 18th at 6pm in THRN 1006. We hope to see
-                  you there! If you have any questions, feel free to email us at cheersgears@uoguelph.ca or message us
-                  on Instagram at @cheersgears!
+                  Calling all students. We are excited to present an annual engineering tradition, the EngMusical. We are looking for talented students to join our cast, crew, dance team, and band. No experience is required. Info sessions will be held on September 15th and 18th at 6 pm in THRN 1006. If you have any questions, email cheersgears@uoguelph.ca or message @cheersgears on Instagram.
                 </p>
-
               </td>
             </tr>
           </table>
@@ -321,433 +306,286 @@
           <!--WiSE BSLS-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 WiSE Big Sisters Little Sisters Applications
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="WiSE Logo.png" width="180" alt="WiSE Logo"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
                 <div style="text-align:left; font-size:15px; line-height:22px;">
-                  📅 <strong>Date:</strong> Applications are due September 13th! <br>
+                  📅 <strong>Date:</strong> Applications are due September 13th<br>
                 </div>
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Get involved with Big Sisters Little Sisters for this year! This program pairs first year
-                  female-identifying engineering students with upper year mentors! We have a lineup of fun events
-                  planned, complete with snacks, activities, and even some prizes! Additionally, by participating as a
-                  big sister, you’ll receive a signed mentorship letter to highlight your involvement (a great addition
-                  to your resume!).<br><br>
-
-                  Applications are due September 13th!
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe01zDbn8huVqyQtzSVwBN1_NeMnG-NIHUQhFyF2RuSF9tDMg/viewform"
+                  Get involved with Big Sisters Little Sisters this year. This program pairs first year female identifying engineering students with upper year mentors. We have a lineup of fun events planned, with snacks, activities, and prizes. Additionally, as a big sister, you will receive a signed mentorship letter to highlight your involvement, which is a great addition to your resume.
+                  <br><br>
+                  Applications are due September 13th.
+                  <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLSe01zDbn8huVqyQtzSVwBN1_NeMnG-NIHUQhFyF2RuSF9tDMg/viewform"
                     target="_blank" style="color:#6a78ff; font-weight:bold; text-decoration:none;">
                     Apply Now!
                   </a>
                 </p>
-
-
-
               </td>
             </tr>
           </table>
+
           <!--ESW-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 ESW First General Meeting
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="image.png" width="180" alt="ESW Logo" style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
                 <div style="text-align:left; font-size:15px; line-height:22px;">
                   📅 <strong>Date:</strong> September 10th 2025<br>
-                  🕖 <strong>Time:</strong> 5:30 PM<br>
+                  🕖 <strong>Time:</strong> 5:30 pm<br>
                   📍 <strong>Location:</strong> THRN 1002<br>
                 </div>
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  We’re excited to welcome you to the first Engineers for a Sustainable World (ESW) meeting of the
-                  semester!
-
-                  
-                  What to Expect: Get to know our exec team, check out our projects, and experience the friendly,
-                  supportive ESW community.
-
-                  Whether you’re new to ESW or returning from last year, this is a great chance to connect, share ideas,
-                  and help shape a greener future together.
-
-                  We can’t wait to see you there!
-
+                  We are excited to welcome you to the first Engineers for a Sustainable World meeting of the semester. Get to know our exec team, check out our projects, and experience the friendly ESW community. Whether you are new to ESW or returning, this is a great chance to connect and help shape a greener future together.
                 </p>
-
               </td>
             </tr>
           </table>
+
           <!--WiSE General Meeting-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
-                WiSE General Meeting Kickoff!
+                WiSE General Meeting Kickoff
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="WiSE Logo.png" width="180" alt="WiSE Logo"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
                 <div style="text-align:left; font-size:15px; line-height:22px;">
                   📅 <strong>Date:</strong> September 17th 2025<br>
-                  🕖 <strong>Time:</strong> 6 PM<br>
+                  🕖 <strong>Time:</strong> 6 pm<br>
                   📍 <strong>Location:</strong> THRN 1006<br>
                 </div>
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  First WiSE meeting of the year! Get to know our exec, learn about WiSE, and get to know some fellow
-                  Women in STEM!
+                  First WiSE meeting of the year. Get to know our exec, learn about WiSE, and meet fellow Women in STEM.
                 </p>
-
               </td>
             </tr>
           </table>
 
-          <!--CoCreCo-->
+          <!--CoCreCo Rentals-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 F25 Textbook Rental
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="image (1).png" width="180" alt="CoCreCo Logo"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
-
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Save money, make the semester easier and be sustainable by renting your textbooks! CoCreCo runs a
-                  student textbook rental for all engineering courses (1st year CHEM included), offering textbooks for
-                  $5 per semester.
-                  Uncomfortable with a PDF? Prefer paper? Need something substantial to make exam prep better? Reach out
-                  to CoCreCo at cocreco@uoguelph.ca or on instagram at @uogcocreco with details of the textbooks you're
-                  looking for to rent your textbook and we'll get in touch with you to get you that textbook!
+                  Save money, make the semester easier, and be sustainable by renting your textbooks. CoCreCo runs a student textbook rental for all engineering courses, offering textbooks for 5 dollars per semester. Prefer paper over a PDF, need something substantial for exam prep, reach out to cocreco@uoguelph.ca or @uogcocreco on Instagram with the textbooks you need.
                 </p>
-
               </td>
             </tr>
           </table>
+
           <!--EWB-->
           <table
-            style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
+            style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px; margin:0 auto 20px auto;">
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 EWB First General Meeting
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="ewb.png" width="180" alt="EWB Logo" style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
                 <div style="text-align:left; font-size:15px; line-height:22px;">
                   📅 <strong>Date:</strong> September 18th 2025<br>
-                  🕖 <strong>Time:</strong> 5:30 PM<br>
+                  🕖 <strong>Time:</strong> 5:30 pm<br>
                   📍 <strong>Location:</strong> THRN 1006<br>
                 </div>
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Come check out the first general meeting/info session of Engineers Without Borders this semester! Our
-                  first meeting will be Thursday, September 18th at 5:30 in THRN 1006! Get to learn more about the club,
-                  connect with your peers and come have a good time! Be sure to follow our Instagram account @EWBguelph
-                  for future executive applications and club meeting updates. Hope to see you all there on the 18th!
+                  Come check out the first general meeting and info session of Engineers Without Borders this semester. Follow @EWBguelph for executive applications and updates. Hope to see you there on the 18th.
                 </p>
-
               </td>
             </tr>
           </table>
 
           <!--IEEE-->
           <table
-            style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
+            style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px; margin:0 auto 20px auto;">
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
                 IEEE First General Meeting
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="image (2).png" width="180" alt="IEEE Logo"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
-
-                <!-- Event Details (left-aligned) -->
                 <div style="text-align:left; font-size:15px; line-height:22px;">
                   📅 <strong>Date:</strong> September 15th 2025<br>
-                  🕖 <strong>Time:</strong> 5:30 PM<br>
+                  🕖 <strong>Time:</strong> 5:30 pm<br>
                   📍 <strong>Location:</strong> THRN 1002<br>
                 </div>
-
-                <!-- Event Description (left-aligned) -->
                 <p style="margin:12px 0 0 0; font-size:15px; line-height:22px; text-align:left;">
-                  Calling all students!
-                  The IEEE Student Branch is excited to host our first general meeting of the year on Monday September
-                  15, 5:30 – 6:30 PM in THRN 1002.
-
-                  Come out to learn more about our club, discover available exec roles, hear about upcoming workshops
-                  this semester, and get a sneak peek at the design teams launching next semester.
-
-                  This is a great opportunity to get involved, connect with like-minded people, and grow your passion
-                  for technology, innovation, and professional development.
-
-                  We can’t wait to see you there! Make sure to follow @uofg_ieee on Instagram for more updates. Also
-                  FREE PIZZA 🍕
-
+                  The IEEE Student Branch is hosting our first general meeting on Monday, September 15, 5:30 to 6:30 pm in THRN 1002. Learn about exec roles and upcoming workshops. Free pizza.
                 </p>
-
               </td>
             </tr>
           </table>
-          <!--CoCreCo-->
+
+          <!--CoCreCo Exec & Sub-team Applications-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
-                CoCreCo Exec & Sub-team Applications!
+                CoCreCo Exec & Sub-team Applications
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="image (1).png" width="180" alt="CoCreCo Logo"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
 
-                <!-- Event Details (left-aligned) -->
                 <p style="margin:12px 0; font-size:15px; line-height:22px; text-align:left;">
                   <strong>Want project experience? Leadership roles?</strong><br>
-                  Want the opportunity to spread your wings, figure out what industries/technologies you like to work
-                  with and do, and how you work in actual team-based roles?
-                  All this while also having fun, joining a community and gaining career-defining experience?
-                  <strong>THAT'S COCRECO!!!</strong>
+                  Figure out what industries or technologies you enjoy, and how you work in real team based roles. Have fun, join a community, and gain career defining experience. <strong>That is CoCreCo.</strong>
                 </p>
 
                 <p style="margin:12px 0; font-size:15px; line-height:22px; text-align:left;">
-                  As a club for all engineering majors, we provide opportunities and foster creativity in the School of
-                  Engineering, as well as adjacent majors, since we take multi-disciplinary work seriously.
+                  We support all engineering majors and adjacent programs, with multi disciplinary teams.
                 </p>
 
                 <p style="margin:12px 0; font-size:15px; line-height:22px; text-align:left;">
                   <strong>What does CoCreCo do?</strong>
                 <ul style="margin:8px 0 8px 20px; font-size:15px; line-height:22px;">
-                  <li>Run the <strong>textbook rental program</strong>, offering affordable textbooks to students.</li>
-                  <li>Organize and run the <strong>Guelph Engineering Competition (GEC2025)</strong> in collaboration
-                    with the School of Engineering, EngSoc, and other clubs. <em>(Hiring for the GEC Team this week!
-                      Stay tuned!)</em></li>
-                  <li><strong>Project Teams</strong> for a variety of disciplines:
+                  <li>Textbook rental program at affordable prices.</li>
+                  <li>Guelph Engineering Competition, GEC2025, with the School of Engineering and EngSoc.</li>
+                  <li><strong>Project Teams</strong> across disciplines:
                     <ul style="margin:6px 0 6px 20px;">
-                      <li><strong>Developers</strong> (C.ENG, ES&C, CompSci, S.ENG) with subteams in Database & Cloud,
-                        Website, and Machine Learning (now working with a $20,000 ML server on campus).</li>
-                      <li><strong>Mechanical Engineering</strong> team: Creating automated textbook rental lockers.</li>
-                      <li><strong>Biomedical Engineering</strong> team: Developing human-computer interfacing methods.
-                      </li>
-                      <li><strong>Graphic Design</strong> team: Portfolio-building projects, marketing, and design
-                        competitions.</li>
+                      <li><strong>Developers</strong>, database and cloud, website, and machine learning, using a 20,000 dollar ML server on campus.</li>
+                      <li><strong>Mechanical</strong>, automated textbook rental lockers.</li>
+                      <li><strong>Biomedical</strong>, human computer interfacing methods.</li>
+                      <li><strong>Graphic Design</strong>, portfolio building work for marketing and competitions.</li>
                     </ul>
                   </li>
                 </ul>
                 </p>
 
                 <p style="margin:12px 0; font-size:15px; line-height:22px; text-align:left;">
-                  And there’s the opportunity for much more! As the club expands, we aim to create new initiatives and
-                  need your help. Want to start a new sub-team (Environmental, Biological, or Water Resources
-                  Engineering)?
-                  Reach out to <a href="https://instagram.com/ricbq" target="_blank"
-                    style="color:#6a78ff; font-weight:bold; text-decoration:none;">@ricbq</a> on Instagram and let’s
-                  talk!
+                  Want to start a new sub team, for example Environmental, Biological, or Water Resources Engineering, reach out to
+                  <a class="link" href="https://instagram.com/ricbq" target="_blank"
+                    style="color:#6a78ff; font-weight:bold; text-decoration:none;">@ricbq</a> on Instagram.
                 </p>
 
                 <p style="margin:12px 0; font-size:15px; line-height:22px; text-align:left;">
-                  There are opportunities in both <strong>exec roles</strong> and <strong>sub-teams</strong>.
-                  Read more about the club, positions, commitments, and more, and apply here:<a href="https://uoguelph.eu.qualtrics.com/jfe/form/SV_7P43NPX1iCaKOKG
-" target="_blank" style="color:#6a78ff; font-weight:bold; text-decoration:none;">
+                  Exec roles and sub teams are open. Read more and apply here:
+                  <a class="link" href="https://uoguelph.eu.qualtrics.com/jfe/form/SV_7P43NPX1iCaKOKG"
+                    target="_blank" style="color:#6a78ff; font-weight:bold; text-decoration:none;">
                     Apply Now!
                   </a>
                 </p>
-
-
-
-
               </td>
             </tr>
           </table>
-                    <!--CoCreCo-->
+
+          <!--GHD Grad Hiring Days-->
           <table
             style="border-collapse:collapse; border-radius:16px; overflow:hidden; width:100%; max-width:600px;margin:0 auto 20px auto;">
-            <!-- Event Title -->
             <tr>
               <td
                 style="background:#6a78ff; color:#ffffff; font-weight:bold; font-size:18px; padding:12px 16px; text-align:center;">
-                GHD Grad Hiring Days 2025!
+                GHD Grad Hiring Days 2025
               </td>
             </tr>
-
-            <!-- Event Body -->
             <tr>
               <td style="background:#303030;  color:#ffffff; padding:16px;">
-
-                <!-- Event Image (centered) -->
                 <div style="text-align:center; margin-bottom:12px;">
                   <img src="download.jpeg" width="180" alt="GHD Logo"
                     style="display:block; margin:0 auto; height:auto;">
                 </div>
 
-               <p style="margin:12px 0; font-size:15px; line-height:22px; text-align:left;">
-  <strong>Do you know someone graduating in Spring 2026 who’s ready to take the next big step in their career?</strong><br>
-  We invite you to share an exciting opportunity with them and anyone in your network — 
-  <strong>GHD Grad Hiring Days</strong> are back for their 4th year in Ontario, and this time, we’re expanding to two new cities: 
-  <strong>Calgary</strong> and <strong>Montréal</strong>!
-</p>
+                <p style="margin:12px 0; font-size:15px; line-height:22px; text-align:left;">
+                  <strong>Do you know someone graduating in Spring 2026 who is ready to take the next big step in their career?</strong><br>
+                  GHD Grad Hiring Days are back for their 4th year in Ontario, and expanding to two cities, Calgary and Montréal.
+                </p>
 
-<p style="margin:12px 0; font-size:15px; line-height:22px; text-align:left;">
-  <strong>Here’s what’s in store for 2026 graduates:</strong>
-</p>
+                <p style="margin:12px 0; font-size:15px; line-height:22px; text-align:left;">
+                  <strong>What is in store for 2026 graduates:</strong>
+                </p>
 
-<ul style="margin:8px 0 12px 20px; font-size:15px; line-height:22px;">
-  <li>✨ On-the-spot interviews for graduate positions</li>
-  <li>✨ Delicious bites and networking with our team</li>
-  <li>✨ ‘Unplugged’ sessions with leaders — hear their stories, ask questions, and get inspired</li>
-  <li>✨ A behind-the-scenes look at <em>“a day in the life”</em> of our young professionals</li>
-</ul>
+                <ul style="margin:8px 0 12px 20px; font-size:15px; line-height:22px;">
+                  <li>✨ On the spot interviews for graduate positions</li>
+                  <li>✨ Food and networking with our team</li>
+                  <li>✨ Unplugged sessions with leaders, hear their stories, ask questions, get inspired</li>
+                  <li>✨ A behind the scenes look at <em>a day in the life</em> of our young professionals</li>
+                </ul>
 
-<p style="margin:12px 0; font-size:15px; line-height:22px; text-align:left;">
-  🚀 If you know talented, motivated individuals finishing their studies in Spring 2026, encourage them to apply now and join us for the <strong>GHD Grad Hiring Days</strong>!
-</p>
-
-
-<p style="margin:16px 0; text-align:center;">
-  <a href="https://ghd.com/careers" target="_blank" 
-     style="background:#6a78ff; color:#ffffff; padding:10px 20px; border-radius:8px; font-weight:bold; text-decoration:none; display:inline-block;">
-    Apply Now!
-  </a>
-</p>
-
-
-
-
+                <p style="margin:16px 0; text-align:center;">
+                  <a href="https://ghd.com/careers" target="_blank"
+                    style="background:#6a78ff; color:#ffffff; padding:10px 20px; border-radius:8px; font-weight:bold; text-decoration:none; display:inline-block;">
+                    Apply Now!
+                  </a>
+                </p>
               </td>
             </tr>
           </table>
 
-          <!--UPCOMING EVENTS GO HERE-->
-          <!-- CTA: Ongoing Events -->
-          <!-- <tr>
-            <td align="center" style="padding:18px 12px 12px 12px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td bgcolor="#2363e2" style="border-radius:6px; padding:12px 22px;">
-                    <a href="#"
-                      style="font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#ffffff; text-decoration:none; font-weight:bold; display:inline-block;">
-                      Ongoing Events</a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          -->
-          <!--ONGOING EVENTS GO HERE-->
-
-
-
-
           <!-- Footer -->
           <tr>
-            <td align="center" style="padding:28px 12px 8px 12px;">
+            <td align="center" class="footer" style="padding:28px 12px 8px 12px; background:#0d0d0d;">
               <img src="bunsen.png" width="90" alt="XOXO Bunsen"
                 style="display:block; width:90px; height:auto; border:0; margin:0 auto 8px auto;">
             </td>
           </tr>
           <tr>
-            <td align="center" style="padding:0 0 24px 0;">
-              <a href="https://www.instagram.com/guelphengsoc/" style="display:inline-block; margin:0 14px;"><img
+            <td align="center" class="footer" style="padding:0 0 24px 0; background:#0d0d0d;">
+              <a href="https://www.instagram.com/guelphengsoc/" style="display:inline-block; margin:0 14px;">
+                <img class="icon"
                   src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" width="28" height="28"
-                  alt="Instagram" style="display:block; border:0;"></a>
-              <a href="https://www.guelphengsoc.com" style="display:inline-block; margin:0 14px;"><img
+                  alt="Instagram" style="display:block; border:0;">
+              </a>
+              <a href="https://www.guelphengsoc.com" style="display:inline-block; margin:0 14px;">
+                <img class="icon"
                   src="https://img.icons8.com/ios-filled/30/ffffff/link.png" width="28" height="28" alt="Website"
-                  style="display:block; border:0;"></a>
-              <a href="https://www.linkedin.com/company/guelphengsoc/" style="display:inline-block; margin:0 14px;"><img
+                  style="display:block; border:0;">
+              </a>
+              <a href="https://www.linkedin.com/company/guelphengsoc/" style="display:inline-block; margin:0 14px;">
+                <img class="icon"
                   src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" width="28" height="28" alt="LinkedIn"
-                  style="display:block; border:0;"></a>
+                  style="display:block; border:0;">
+              </a>
             </td>
           </tr>
 
@@ -759,5 +597,4 @@
   </table>
   <!-- /Wrapper -->
 </body>
-
 </html>
